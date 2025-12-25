@@ -5,12 +5,12 @@ class DigitalWallet:
         self.__unlock=False
     def is_unlock(self,pin):
         if self.__pin==pin:
-            self.__unlcok=True
+            self.__unlock=True
         else:
             print("wrong PIN")
 
     def deposit(self,ammount):
-        if self.__unlcok and ammount>0:
+        if self.__unlock and ammount>0:
             self.__balance+=ammount
         else:
             print("please log in first or ammount is not valid")
@@ -27,4 +27,8 @@ class DigitalWallet:
 
 account1= DigitalWallet("1234")
 account1.is_unlock("1234")
+account1.balanced_amount()
+account1.deposit(100)
+account1.balanced_amount()
+account1.withdraw(50)
 account1.balanced_amount()
