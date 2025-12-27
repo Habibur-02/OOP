@@ -26,3 +26,12 @@ class UserAccount:
             return {"username": self.__username, "email":self.__email}
         else:
             print("Login first")
+
+
+account1=UserAccount("Habibur", "hraasif@gmail.com", "1234")
+account1.login("1234")
+account1.getProfile()
+account1.getmaskingemail()
+account1.logout()
+account1.getProfile()
+
