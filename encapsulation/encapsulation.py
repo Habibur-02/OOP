@@ -3,27 +3,34 @@ class UserAccount:
         self.__password=passw
         self.__email=email
         self.__username=username
-        self._logged_in=False
+        self.__logged_in=False
     def login(self, passw):
         if self.__password==passw:
-            self._logged_in=True
+            self.__logged_in=True
         else:
             print("wrong password")
     def logout(self):
-        self._logged_in=False
+        if self.__logged_in==True:
+            self.__logged_in=False
+            print("logged out")
+        else:
+            print("already logged out")
+
     def changePassword(self, oldpass, newpass):
-        if self._logged_in and self.__password==oldpass:
-            self.__password=newpass
+        if self.__logged_in and self.__password==oldpass:
+            self.___password=newpass
         else:
             print("Wrong pass or log in first")
 
     def getmaskingemail(self):
-        if self._logged_in:
+        if self.__logged_in:
             name, domain= self.__email.split('@')
             return name[0]+"****"+name[-1]+"@"+domain
     def getProfile(self):
-        if self._logged_in:
-            return {"username": self.__username, "email":self.__email}
+        if self.__logged_in:
+            name, domain= self.__email.split('@')
+            mail=name[0]+"****"+name[-1]+"@"+domain
+            return {"username": self.__username, "email":mail}
         else:
             print("Login first")
 
@@ -34,4 +41,3 @@ account1.getProfile()
 account1.getmaskingemail()
 account1.logout()
 account1.getProfile()
-
