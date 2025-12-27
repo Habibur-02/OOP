@@ -11,7 +11,7 @@ class UserAccount:
             print("wrong password")
     def logout(self):
         self._logged_in=False
-    def changePassword(oldpass, newpass):
+    def changePassword(self, oldpass, newpass):
         if self._logged_in and self.__password==oldpass:
             self.__password=newpass
         else:
