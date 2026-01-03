@@ -1,9 +1,9 @@
 class Animal:
     def speak(self):
-        pass  # Generic method
+        pass  
 
 class Dog(Animal):
-    def speak(self):  # Override
+    def speak(self): 
         return "Bark"
 
 class Cat(Animal):
@@ -12,5 +12,5 @@ class Cat(Animal):
 
 animals = [Dog(), Cat()]
 for animal in animals:
-    print(animal.speak())  # Each object behaves differently
+    print(animal.speak())  
 # Output: Bark, Meow
